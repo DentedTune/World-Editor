@@ -3552,7 +3552,7 @@ MonoBehaviour:
     maxLength: 5
     maxHeight: 3
   editWorld: {fileID: 1614217360}
-  tile: {fileID: 6415180155820241816, guid: ab228927138cc2d4e8502a5c27224a57, type: 3}
+  tile: {fileID: 5233754002640226056, guid: 135af40f0d683d54b9a3ab2129b9ab00, type: 3}
   cameraToMove: {fileID: 519420031}
 --- !u!1 &927966907
 GameObject:
