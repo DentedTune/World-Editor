@@ -18,7 +18,7 @@ public class CreateWorld : MonoBehaviour
     [ContextMenu("Environment2D/Create")]
     public async void CreateEnvironment2D()
     {
-        IWebRequestReponse webRequestResponse = await environment2DApiClient.CreateEnvironment(new Environment2D {id = "813b4762-a0eb-4302-a577-d451592190c1", userId = "813b4762-a0eb-4302-a577-d451592190c1", name = worldNameInput.text, maxHeight = int.Parse(lengthInput.text), maxLength = int.Parse(widthInput.text)});
+        IWebRequestReponse webRequestResponse = await environment2DApiClient.CreateEnvironment(new Environment2D {id = "813b4762-a0eb-4302-a577-d451592190c1", userId = "813b4762-a0eb-4302-a577-d451592190c1", name = worldNameInput.text, height = int.Parse(lengthInput.text), width = int.Parse(widthInput.text)});
 
         switch (webRequestResponse)
         {
