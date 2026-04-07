@@ -9,23 +9,21 @@ using UnityEngine;
 [Serializable]
 public class Object2D
 {
-    public string id;
+    public string id = "";
 
-    public string environmentId;
+    public string environmentId = "";
 
-    public string objectType;
+    public string objectType = "chair";
 
-    public int positionX;
+    public int positionX = 1;
 
-    public int positionY;
+    public int positionY = 1;
 
-    public int width;
+    public int width = 1;
 
-    public int length;
+    public int length = 1;
 
-    public int direction;
+    public int direction = 0;
 
-    public float rotationZ;
-
-    public int sortingLayer;
+    public float rotationZ = 0;
 }

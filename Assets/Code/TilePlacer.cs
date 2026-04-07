@@ -6,7 +6,10 @@ public class TilePlacer : MonoBehaviour
     public Environment2D testEnvironment = new Environment2D { height = 3, width = 5};
     public EditWorld editWorld;
     public GameObject tile;
+    public BetterTileBehavior tileBehavior;
+    public LocalRoomState currentState;
     public Camera cameraToMove;
+    public Transform ContainerForTiles;
 
     public void PlaceTiles()
     {
@@ -17,7 +20,10 @@ public class TilePlacer : MonoBehaviour
         {
             for(int col = 1; col <= editWorld.currentEnvironment.width; col++)
             {
-                Instantiate(tile, new Vector3(col * 1, row * 1, 0), Quaternion.identity);
+                tileBehavior.state = currentState;
+                tileBehavior.furniture.positionX = col;
+                tileBehavior.furniture.positionY = row;
+                Instantiate(tile, new Vector3(col * 1, row * 1, 0), Quaternion.identity, ContainerForTiles);
             }
         }
     }

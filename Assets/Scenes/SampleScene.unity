@@ -940,8 +940,8 @@ MonoBehaviour:
     userId: 
     id: 
     name: Hotel
-    maxLength: 50
-    maxHeight: 50
+    height: 0
+    width: 0
   object2D:
     id: 
     environmentId: 
@@ -952,7 +952,6 @@ MonoBehaviour:
     length: 1
     direction: 1
     rotationZ: 0
-    sortingLayer: 0
   userApiClient: {fileID: 1487298855}
   enviroment2DApiClient: {fileID: 1487298854}
   object2DApiClient: {fileID: 1487298852}
@@ -3549,11 +3548,14 @@ MonoBehaviour:
     userId: 
     id: 
     name: 
-    maxLength: 5
-    maxHeight: 3
+    height: 3
+    width: 5
   editWorld: {fileID: 1614217360}
   tile: {fileID: 5233754002640226056, guid: 135af40f0d683d54b9a3ab2129b9ab00, type: 3}
+  tileBehavior: {fileID: -4802320084360645828, guid: 135af40f0d683d54b9a3ab2129b9ab00, type: 3}
+  currentState: {fileID: 1531191614}
   cameraToMove: {fileID: 519420031}
+  ContainerForTiles: {fileID: 1091816235}
 --- !u!1 &927966907
 GameObject:
   m_ObjectHideFlags: 0
@@ -4304,6 +4306,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1080527093}
   m_CullTransparentMesh: 1
+--- !u!1 &1091816234
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1091816235}
+  m_Layer: 0
+  m_Name: TileContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1091816235
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091816234}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1320642421}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1094222017
 GameObject:
   m_ObjectHideFlags: 0
@@ -5259,6 +5292,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 923229401}
+  - {fileID: 1091816235}
+  - {fileID: 1531191613}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1334010476
@@ -6302,6 +6337,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1493438716}
   m_CullTransparentMesh: 1
+--- !u!1 &1531191612
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1531191613}
+  - component: {fileID: 1531191614}
+  m_Layer: 0
+  m_Name: ListOfChanges
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1531191613
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531191612}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1320642421}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1531191614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531191612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06e593415ddbeaf4e9dc38e9205f6e85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LastSavedState: []
 --- !u!1 &1532773063
 GameObject:
   m_ObjectHideFlags: 0
@@ -6486,8 +6566,8 @@ MonoBehaviour:
     userId: 
     id: 
     name: 
-    maxLength: 0
-    maxHeight: 0
+    height: 0
+    width: 0
 --- !u!1 &1618426721
 GameObject:
   m_ObjectHideFlags: 0
@@ -6930,8 +7010,8 @@ MonoBehaviour:
     userId: 
     id: 
     name: 
-    maxLength: 0
-    maxHeight: 0
+    height: 0
+    width: 0
   environmentStuff: {fileID: 661868798}
   worldCreate: {fileID: 1444188387}
   worldSelect: {fileID: 1099707614}
