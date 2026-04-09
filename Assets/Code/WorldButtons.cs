@@ -94,6 +94,11 @@ public class WorldButtons : MonoBehaviour
     {
         editWorld.currentEnvironment = environmentStuff.UsersEnvironments[worldNumber];
         worldSelectScreen.SetActive(false);
+        button1.SetActive(false);
+        button2.SetActive(false);
+        button3.SetActive(false);
+        button4.SetActive(false);
+        button5.SetActive(false);
         worldEditor.SetActive(true);
     }
 

@@ -13,7 +13,7 @@ public class TilePlacer : MonoBehaviour
     public void PlaceTiles()
     {
         cameraToMove.transform.position = new Vector3(editWorld.currentEnvironment.width / 2 + (float)0.5, editWorld.currentEnvironment.height / 2 + (float)0.5, -10);
-        cameraToMove.orthographicSize = editWorld.currentEnvironment.height * 16/9 > editWorld.currentEnvironment.width ? (editWorld.currentEnvironment.height / 2) + (float)0.5 : (editWorld.currentEnvironment.width / 2) + (float)0.5;
+        cameraToMove.orthographicSize = editWorld.currentEnvironment.height * 16/9 > editWorld.currentEnvironment.width ? (editWorld.currentEnvironment.height * 8 / 9) + (float)0.5 : (editWorld.currentEnvironment.width / 2) + (float)0.5;
 
         for (int row = 1; row <= editWorld.currentEnvironment.height; row++)
         {

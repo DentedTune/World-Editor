@@ -3,6 +3,8 @@ using TMPro;
 using Unity.VisualScripting;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Jobs;
+using System.Linq;
 
 public class LogInButtonHandler : MonoBehaviour
 {
@@ -31,6 +33,12 @@ public class LogInButtonHandler : MonoBehaviour
     [ContextMenu("User/Register")]
     public async void Register()
     {
+        if (!ProperPassword(passwordField.text))
+        {
+            errorMessageText.SetText("Wachtwoord is niet sterk genoeg!");
+            errorMessageObject.SetActive(true);
+        }
+
         IWebRequestReponse webRequestResponse = await userApiClient.Register(new User {email = emailField.text, password = passwordField.text});
 
         switch (webRequestResponse)
@@ -91,4 +99,34 @@ public class LogInButtonHandler : MonoBehaviour
     }
 
     #endregion
+
+    private bool ProperPassword(string password)
+    {
+        if (password.Length < 10)
+        {
+            return false;
+        }
+
+        if (password == password.ToLower() || password == password.ToUpper())
+        {
+            return false;
+        }
+
+        char[] requiredCharArray = new char[] { '!', '@', '#', '$', '%', '&', '*', '-', '?', '<', '>', '=', '{', '}', '^', '~' };
+
+        for (int i = 0; i < requiredCharArray.Length; i++)
+        {
+            if (password.Contains(requiredCharArray[i]))
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    if (password.Contains(j.ToString()))
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
 }
