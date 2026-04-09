@@ -23,7 +23,7 @@ public class LocalRoomState : MonoBehaviour
                         ListOfCurrentEdits[i].Place = false;
                     }
                 }
-                ListOfCurrentEdits.Add(new Edit { Place = false, Furniture = new Object2D { positionX = xPosition, positionY = yPosition } });
+                ListOfCurrentEdits.Add(new Edit { Place = false, Furniture = new Object2D { id = LastSavedState[j].id, positionX = xPosition, positionY = yPosition } });
                 ListStatusInConsole();
                 return;
             }
@@ -97,7 +97,7 @@ public class LocalRoomState : MonoBehaviour
                 furniture1.width == furniture2.width &&
                 furniture1.length == furniture2.length &&
                 furniture1.direction == furniture2.direction &&
-                furniture1.rotationZ == furniture2.rotationZ;
+                furniture1.rotation == furniture2.rotation;
     }
 
     public void ListStatusInConsole()
@@ -108,7 +108,7 @@ public class LocalRoomState : MonoBehaviour
         {
             if (ListOfCurrentEdits[i].Place)
             {
-                changes += $"Place a {ListOfCurrentEdits[i].Furniture.objectType} at ({ListOfCurrentEdits[i].Furniture.positionX},{ListOfCurrentEdits[i].Furniture.positionY})\n";
+                changes += $"Place a {ListOfCurrentEdits[i].Furniture.objectType} with direction {ListOfCurrentEdits[i].Furniture.direction} at ({ListOfCurrentEdits[i].Furniture.positionX},{ListOfCurrentEdits[i].Furniture.positionY})\n";
             }
             else
             {
@@ -116,6 +116,6 @@ public class LocalRoomState : MonoBehaviour
             }
         }
 
-        Debug.Log($"The following changes will be made if you save now:\n {changes}");
+        Debug.Log($"The following changes will be made if you save now:\n{changes}");
     }
 }
