@@ -7,6 +7,7 @@ public class TilePlacer : MonoBehaviour
     public EditWorld editWorld;
     public GameObject tile;
     public BetterTileBehavior tileBehavior;
+    public LocalRoomState currentState;
     public Camera cameraToMove;
     public Transform ContainerForTiles;
 
@@ -19,11 +20,11 @@ public class TilePlacer : MonoBehaviour
         {
             for(int col = 1; col <= editWorld.currentEnvironment.width; col++)
             {
+                tileBehavior.state = currentState;
                 tileBehavior.furniture.positionX = col;
                 tileBehavior.furniture.positionY = row;
                 Instantiate(tile, new Vector3(col * 1, row * 1, 0), Quaternion.identity, ContainerForTiles);
             }
         }
-        Debug.Log("All tiles placed!");
     }
 }

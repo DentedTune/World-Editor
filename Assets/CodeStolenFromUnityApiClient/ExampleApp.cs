@@ -134,7 +134,7 @@ public class ExampleApp : MonoBehaviour
     [ContextMenu("Object2D/Read all")]
     public async void ReadObject2Ds()
     {
-        IWebRequestReponse webRequestResponse = await object2DApiClient.ReadObject2Ds(object2D.worldId);
+        IWebRequestReponse webRequestResponse = await object2DApiClient.ReadObject2Ds(object2D.environmentId);
 
         switch (webRequestResponse)
         {

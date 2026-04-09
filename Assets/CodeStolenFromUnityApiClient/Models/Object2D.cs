@@ -9,9 +9,9 @@ using UnityEngine;
 [Serializable]
 public class Object2D
 {
-    public string worldId = "9230db82-a8c3-4538-9168-18736c1bd7c6";
+    public string id = "";
 
-    public string id = "9230db82-a8c3-4538-9168-18736c1bd73f";
+    public string environmentId = "";
 
     public string objectType = "chair";
 
@@ -25,5 +25,5 @@ public class Object2D
 
     public int direction = 0;
 
-    public float rotation = 0;
+    public float rotationZ = 0;
 }
