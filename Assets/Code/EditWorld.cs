@@ -9,6 +9,8 @@ public class EditWorld : MonoBehaviour
     public Object2DApiClient object2DApiClient;
     public LocalRoomState localRoomState;
 
+    public TilePlacer tilePlacer;
+
     public async void GetMyFurniture()
     {
         IWebRequestReponse webRequestResponse = await object2DApiClient.ReadObject2Ds(currentEnvironment.id);
@@ -32,5 +34,7 @@ public class EditWorld : MonoBehaviour
             default:
                 throw new NotImplementedException("No implementation for webRequestResponse of class: " + webRequestResponse.GetType());
         }
+
+        tilePlacer.PlaceTiles();
     }
 }
